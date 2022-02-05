@@ -1,0 +1,10 @@
+
+
+Q1 : 
+SELECT year , worksite,count(*) as nbr FROM h1b_final WHERE case_status="CERTIFIED" GROUP BY year,worksite order by nbr DESC LIMIT 5; 
+Q2:(a) 
+SELECT year , job_title,count(*) as nbr FROM h1b_final GROUP BY year,job_title order by nbr DESC LIMIT 10; 
+Q2 :(b) 
+SELECT year , job_title,count(*) as nbr FROM h1b_final WHERE case_status="CERTIFIED" GROUP BY year,job_title order by nbr DESC LIMIT 10;
+Q3: 
+SELECT year, soc_name,count(*) as nbr FROM h1b_final WHERE year >(select (year(current_date())-5))  GROUP BY year,soc_name ORDER BY nbr DESC LIMIT 5;notre cas , on utilise > strictement
